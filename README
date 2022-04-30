@@ -1,0 +1,11 @@
+
+This clEnvironment API allows you to precompile your OpenCL kernels into
+binaries then import them into you C/C++ code as statically defined arrays of
+data which can then be re-used with the clCreateEnvironmentFromBins API. The
+make system herein also forces the %.cl to %.h conversion to be a dependency
+on the successful creation of your program/library/shared object. This means
+that if your .cl files do not compile correctly you can not build your target,
+thus pushing the run-time OpenCL build stages back into build-time builds. It
+also allows you to completely specify a generic OpenCL Kernel call via predefined
+structures, thus freeing you to not worry about how to queue/call/pass args/etc.
+
